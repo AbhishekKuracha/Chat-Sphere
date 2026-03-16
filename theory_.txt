@@ -1,0 +1,44 @@
+chakra-ui is a component library.
+these help to build our apps very fast.they have their prebuilt components
+in index.js we have to wrap our app with chakraprovider.
+
+if we are trying to make a api call from frontend to backend it will give a cors error
+to avoid that error we have to pass proxy to our frontend app
+as our 
+Frontend
+http://localhost:3000
+Backend
+http://localhost:5000
+as these are on different ports we have to make a same origin
+see in package.josn we added proxy.
+
+
+For popup errors we used toast from chakraui
+
+socket io uses technology called websockets
+for real time chat systems
+
+install socket.io in backend and frontend
+and then we create the connection between backend and frontend
+
+in backend
+we are creating io which takes server,cors (to avoid erros),pingTimeout (amount of time it will wait while being inactive)
+now we are connecting to socket
+
+in frontend
+endpoint= url
+here io is taken from installed in frontend
+io taking endpoint and sending user data (by emit)
+
+in backend
+whenever user opens app he have to connect to his own personal socket
+here we are creating a new socket
+socket.on will take user data from frontend we join them and create a new room using userid
+
+ie when we click on any chat it should create a new room with that user other user will be added into this room.
+other users join by using the room id.
+joinchat which gives room id 
+
+whenever they do message we have to send those messages into this room
+if incase of group chat the message should be sent to other except us.. by using id of users message is not send to sender
+
